@@ -57,7 +57,7 @@ h = domain.h(1, bdry_airfoil)
 idx2 = mesh.locate_entities_boundary(domain, 1, lambda x: (abs(x[0] - 0.5) < max(h)) & (abs(x[1]) < 1))
 idx2 = idx2[np.argsort(idx2[:])]
 f3 = idx2[-1]
-f4 = idx2[1]
+f4 = idx2[0]
 m3, m4 = mesh.compute_midpoints(domain, tdim-1, np.array([f3, f4]))
 
 print("srednji gornji panel:", f3, " ~ ", m3)
